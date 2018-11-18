@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace FPPG_CRM_v2
 {
-    public class Class1
+    public enum Repetition
     {
+        none,
+        monthly,
+        quarterly,
+        annual
+                        
     }
 }

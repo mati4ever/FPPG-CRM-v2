@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPPG CRM v2", "FPPG CRM v2\FPPG CRM v2.csproj", "{61B12D23-72FC-4C99-826A-5790905995FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI CRM", "UI CRM\UI CRM.csproj", "{0EA321D4-87E0-43B6-895E-979BA9131FC7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{61B12D23-72FC-4C99-826A-5790905995FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61B12D23-72FC-4C99-826A-5790905995FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61B12D23-72FC-4C99-826A-5790905995FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EA321D4-87E0-43B6-895E-979BA9131FC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EA321D4-87E0-43B6-895E-979BA9131FC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EA321D4-87E0-43B6-895E-979BA9131FC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EA321D4-87E0-43B6-895E-979BA9131FC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
