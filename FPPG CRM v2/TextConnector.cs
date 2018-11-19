@@ -14,11 +14,38 @@ namespace FPPG_CRM_v2
         private const string TaskCategoryFile = "TaskCategory.csv";
         private const string TaskListFile = "TaskList.csv";
 
+        public List<PersonModel> AvaliableConnections(PersonModel person)
+        {
+            List<PersonModel> people = GlobalConfig.Connection.GetPerson_All();
+            List<PersonModel> connected = GlobalConfig.Connection.GetConnectionsByPerson_All(person);
 
+
+            foreach (PersonModel p in connected)
+            {
+                PersonModel remove = people.Single(x => x.Id == p.Id);
+                people.Remove(remove);
+
+            }
+            PersonModel removex = people.Single(x => x.Id == person.Id);
+            people.Remove(removex);
+
+            return people;
+        }
 
         public void CreateConnection(ConnectionModel connection)
         {
-            throw new NotImplementedException();
+            List<ConnectionModel> connections = ConnectionsFile.FullFilePath().LoadFile().ConvertToConnectionModel(GetPerson_All());
+
+            int currentId = 1;
+
+            if (connections.Count > 0)
+            {
+                currentId = connections.OrderByDescending(x => x.Id).First().Id + 1;
+            }
+            connection.Id = currentId;
+            connections.Add(connection);
+
+            connections.SaveToConnectionFile(ConnectionsFile);
         }
 
         public void CreatePerson(PersonModel person)
@@ -48,6 +75,28 @@ namespace FPPG_CRM_v2
 
             tasks.SaveToTaskFile(TaskListFile);
 
+
+        }
+
+        public List<PersonModel> GetConnectionsByPerson_All(PersonModel person)
+        {
+            List<ConnectionModel> connections = ConnectionsFile.FullFilePath().LoadFile().ConvertToConnectionModel(GetPerson_All());
+            List<PersonModel> output = new List<PersonModel>();
+
+            foreach (ConnectionModel c in connections)
+            {
+                if (c.FirstPerson.Id == person.Id)
+                {
+                    output.Add(c.SecondPerson);
+                }
+                else if (c.SecondPerson.Id == person.Id)
+                {
+                    output.Add(c.FirstPerson);
+                }
+
+            }
+
+            return output;
 
         }
 
@@ -163,6 +212,33 @@ namespace FPPG_CRM_v2
                 }
             }
             return output;
+        }
+
+        public void RemoveConnection(PersonModel firstPerson, PersonModel secondPerson)
+        {
+            List<ConnectionModel> connections = ConnectionsFile.FullFilePath().LoadFile().ConvertToConnectionModel(GetPerson_All());
+            ConnectionModel toRemove = new ConnectionModel();
+
+            foreach (ConnectionModel c in connections)
+            {
+                if (c.FirstPerson.Id == firstPerson.Id && c.SecondPerson.Id == secondPerson.Id)
+                {
+                    toRemove = c;
+
+                }
+                else if (c.FirstPerson.Id == secondPerson.Id && c.SecondPerson.Id == firstPerson.Id)
+                {
+                    toRemove = c;
+
+                }
+            }
+
+            ConnectionModel remove = connections.Single(x => x.Id == toRemove.Id);
+            connections.Remove(remove);
+
+            connections.SaveToConnectionFile(ConnectionsFile);
+
+
         }
 
         public void RemovePerson(PersonModel person)

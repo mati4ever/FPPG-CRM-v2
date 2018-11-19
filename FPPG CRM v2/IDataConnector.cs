@@ -19,6 +19,9 @@ namespace FPPG_CRM_v2
         List<TaskModel> GetTask_Close();
         List<TaskModel> GetTask_Missed();
 
+        List<PersonModel> GetConnectionsByPerson_All(PersonModel person);
+        List<PersonModel> AvaliableConnections(PersonModel person);
+
         List<TaskModel> GetTaskByPerson_All(PersonModel person);
         List<TaskModel> GetTaskByPerson_Active(PersonModel person);
 
@@ -30,6 +33,7 @@ namespace FPPG_CRM_v2
 
         void RemoveTask(TaskModel task);
         void RemovePerson(PersonModel person);
+        void RemoveConnection(PersonModel firstPerson, PersonModel secondPerson);
 
         int GetPersonId();
 

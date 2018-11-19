@@ -61,6 +61,7 @@
             this.todaysTask_listbox.Location = new System.Drawing.Point(39, 55);
             this.todaysTask_listbox.Name = "todaysTask_listbox";
             this.todaysTask_listbox.Size = new System.Drawing.Size(724, 96);
+            this.todaysTask_listbox.Sorted = true;
             this.todaysTask_listbox.TabIndex = 1;
             // 
             // label2
@@ -81,6 +82,7 @@
             this.closeTask_listbox.Location = new System.Drawing.Point(39, 182);
             this.closeTask_listbox.Name = "closeTask_listbox";
             this.closeTask_listbox.Size = new System.Drawing.Size(724, 142);
+            this.closeTask_listbox.Sorted = true;
             this.closeTask_listbox.TabIndex = 1;
             // 
             // label3
@@ -101,6 +103,7 @@
             this.missedTask_listbox.Location = new System.Drawing.Point(39, 375);
             this.missedTask_listbox.Name = "missedTask_listbox";
             this.missedTask_listbox.Size = new System.Drawing.Size(724, 142);
+            this.missedTask_listbox.Sorted = true;
             this.missedTask_listbox.TabIndex = 1;
             // 
             // todayTaskDelay_button

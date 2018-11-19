@@ -88,6 +88,42 @@ namespace FPPG_CRM_v2
 
         }
 
+        public static List<ConnectionModel> ConvertToConnectionModel(this List<string> lines, List<PersonModel> people)
+        {
+            
+            List<ConnectionModel> output = new List<ConnectionModel>();
+
+            foreach (string line in lines)
+            {
+                string[] cols = line.Split('#');
+
+                ConnectionModel c = new ConnectionModel();
+
+
+                c.Id = int.Parse(cols[0]);
+                int firstId = int.Parse(cols[1]);
+                int secondId = int.Parse(cols[2]);
+
+               foreach (PersonModel p  in people)
+                {
+                    if (p.Id == firstId)
+                    {
+                        c.FirstPerson = p;
+                    }
+                    else if (p.Id == secondId)
+                    {
+                        c.SecondPerson = p;
+                    }
+          
+                }
+
+                output.Add(c);
+
+            }
+            return output;
+
+        }
+
         public static void SaveToPersonFile(this List<PersonModel> models, string fileName)
         {
             List<string> lines = new List<string>();
@@ -110,6 +146,16 @@ namespace FPPG_CRM_v2
             File.WriteAllLines(fileName.FullFilePath(), lines);
         }
 
+        public static void SaveToConnectionFile(this List<ConnectionModel> connections, string fileName)
+        {
+            List<string> lines = new List<string>();
+            foreach (ConnectionModel c in connections)
+            {
+                lines.Add($"{ c.Id }#{ c.FirstPerson.Id }#{ c.SecondPerson.Id }");
+            }
+            File.WriteAllLines(fileName.FullFilePath(), lines);
+
+        }
 
 
     }

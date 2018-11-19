@@ -32,7 +32,7 @@
             this.logo_panel = new System.Windows.Forms.Panel();
             this.button_panel = new System.Windows.Forms.Panel();
             this.exit_button = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.task_button = new System.Windows.Forms.Button();
             this.customer_button = new System.Windows.Forms.Button();
             this.home_button = new System.Windows.Forms.Button();
             this.changing_panel = new System.Windows.Forms.Panel();
@@ -54,7 +54,7 @@
             // 
             this.button_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(51)))));
             this.button_panel.Controls.Add(this.exit_button);
-            this.button_panel.Controls.Add(this.button1);
+            this.button_panel.Controls.Add(this.task_button);
             this.button_panel.Controls.Add(this.customer_button);
             this.button_panel.Controls.Add(this.home_button);
             this.button_panel.Location = new System.Drawing.Point(12, 127);
@@ -78,21 +78,21 @@
             this.exit_button.UseVisualStyleBackColor = true;
             this.exit_button.Click += new System.EventHandler(this.exit_button_Click);
             // 
-            // button1
+            // task_button
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(0, 145);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(228, 65);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "ZADANIA";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.task_button.FlatAppearance.BorderSize = 0;
+            this.task_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.task_button.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.task_button.Image = ((System.Drawing.Image)(resources.GetObject("task_button.Image")));
+            this.task_button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.task_button.Location = new System.Drawing.Point(0, 145);
+            this.task_button.Name = "task_button";
+            this.task_button.Size = new System.Drawing.Size(228, 65);
+            this.task_button.TabIndex = 3;
+            this.task_button.Text = "ZADANIA";
+            this.task_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.task_button.UseVisualStyleBackColor = true;
+            this.task_button.Click += new System.EventHandler(this.task_button_Click);
             // 
             // customer_button
             // 
@@ -169,7 +169,7 @@
         private System.Windows.Forms.Panel button_panel;
         private System.Windows.Forms.Panel changing_panel;
         private System.Windows.Forms.Button exit_button;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button task_button;
         private System.Windows.Forms.Button customer_button;
         private System.Windows.Forms.Button home_button;
         private System.Windows.Forms.Panel moving_panel;

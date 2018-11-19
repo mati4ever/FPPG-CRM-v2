@@ -30,7 +30,7 @@ namespace FPPG_CRM_v2
         {
             get
             {
-               return  $@"{ LastName }  { FirstName }";
+               return  $@"{ LastName }  { FirstName }    --    { PhoneNumber }    --    { EmailAddress }";
             }
         }
 
@@ -38,7 +38,15 @@ namespace FPPG_CRM_v2
         {
             get
             {
-                return $@"ID: {Id}  --  { LastName } { FirstName }";
+                return $@"ID: {Id}    --    { LastName } { FirstName }    --    { PhoneNumber }    --    { EmailAddress }";
+            }
+        }
+
+        public string RepresentByLastNameShort
+        {
+            get
+            {
+                return $@"{ LastName }  { FirstName }";
             }
         }
 

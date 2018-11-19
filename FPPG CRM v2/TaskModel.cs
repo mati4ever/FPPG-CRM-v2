@@ -37,11 +37,27 @@ namespace FPPG_CRM_v2
 
         }
 
+        public string RepresentByDateLong
+        {
+            get
+            {
+                return $@"   {DateOfCreation.ToString("yyyy-MM-dd") }    --   {   DateOfExecution.ToString("yyyy-MM-dd") }      --       { Category }     --     { StatusDisplay() } ";
+            } 
+        }
+
         public string RepresentByDate
         {
             get
             {
                 return $@"  {   DateOfExecution.ToString("yyyy-MM-dd") }    --    { Category }    --   { Person.LastName } { Person.FirstName }    --    { StatusDisplay() } ";
+            }
+        }
+
+        public string RepresentForPerson
+        {
+            get
+            {
+                return $@"{  DateOfExecution.ToString("yyyy-MM-dd") } -- { Category }";
             }
         }
 
