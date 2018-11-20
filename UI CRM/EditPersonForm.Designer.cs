@@ -222,9 +222,9 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 23);
+            this.label1.Size = new System.Drawing.Size(62, 23);
             this.label1.TabIndex = 14;
-            this.label1.Text = "Dodaj klienta";
+            this.label1.Text = "Klient";
             // 
             // editCustomer_button
             // 
@@ -295,6 +295,8 @@
             // 
             // connection_combobox
             // 
+            this.connection_combobox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.connection_combobox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.connection_combobox.Enabled = false;
             this.connection_combobox.FormattingEnabled = true;
             this.connection_combobox.Location = new System.Drawing.Point(511, 192);

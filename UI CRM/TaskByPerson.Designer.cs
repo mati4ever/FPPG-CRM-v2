@@ -44,6 +44,8 @@
             // 
             // customer_combobox
             // 
+            this.customer_combobox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.customer_combobox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.customer_combobox.FormattingEnabled = true;
             this.customer_combobox.Location = new System.Drawing.Point(41, 85);
             this.customer_combobox.Name = "customer_combobox";
@@ -104,6 +106,7 @@
             this.taskDone_button.Text = "Wykonane";
             this.taskDone_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.taskDone_button.UseVisualStyleBackColor = true;
+            this.taskDone_button.Click += new System.EventHandler(this.taskDone_button_Click);
             // 
             // addTask_button
             // 
@@ -118,6 +121,7 @@
             this.addTask_button.Text = "Dodaj nowe";
             this.addTask_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.addTask_button.UseVisualStyleBackColor = true;
+            this.addTask_button.Click += new System.EventHandler(this.addTask_button_Click);
             // 
             // remove_button
             // 
@@ -132,6 +136,7 @@
             this.remove_button.Text = "Usuń";
             this.remove_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.remove_button.UseVisualStyleBackColor = true;
+            this.remove_button.Click += new System.EventHandler(this.remove_button_Click);
             // 
             // taskDetails_button
             // 
@@ -146,6 +151,7 @@
             this.taskDetails_button.Text = "Pokaż";
             this.taskDetails_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.taskDetails_button.UseVisualStyleBackColor = true;
+            this.taskDetails_button.Click += new System.EventHandler(this.taskDetails_button_Click);
             // 
             // active_button
             // 
@@ -173,6 +179,7 @@
             this.cancel_button.Text = "Wyjdź";
             this.cancel_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.cancel_button.UseVisualStyleBackColor = true;
+            this.cancel_button.Click += new System.EventHandler(this.cancel_button_Click);
             // 
             // TaskByPerson
             // 

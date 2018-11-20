@@ -164,6 +164,12 @@ namespace FPPG_CRM_v2
             return output;
         }
 
+        public List<string> GetTaskCategory()
+        {
+            List<string> category = TaskCategoryFile.FullFilePath().LoadFile();
+            return category;
+        }
+
         public List<TaskModel> GetTask_Active()
         {
             List<TaskModel> output = new List<TaskModel>();
@@ -244,19 +250,73 @@ namespace FPPG_CRM_v2
         public void RemovePerson(PersonModel person)
         {
             List<PersonModel> people = PeopleFile.FullFilePath().LoadFile().ConvertToPersonModels();
-            PersonModel remove = people.Single(x => x.Id == person.Id);
-            people.Remove(remove);
-            people.SaveToPersonFile(PeopleFile);
+
+            if (people.Count != 0)
+            {
+                RemoveTaskByPerson_all(person);
+                RemoveConnectionsByPerson_all(person);
+                PersonModel remove = people.Single(x => x.Id == person.Id);
+                people.Remove(remove);
+                people.SaveToPersonFile(PeopleFile);
+            }
+
+            
+           
+        }
+
+        private void RemoveTaskByPerson_all(PersonModel person)
+        {
+            List<TaskModel> tasks = TaskListFile.FullFilePath().LoadFile().ConvertToTaskModels(PeopleFile);
+            List<TaskModel> output = new List<TaskModel>();
+
+            if (tasks.Count != 0)
+            {
+                foreach (TaskModel t in tasks)
+                {
+                    if (t.Person.Id != person.Id)
+                    {
+                        output.Add(t);
+                    }
+                }
+                output.SaveToTaskFile(TaskListFile);
+            }
+     
+
+
+        }
+
+        private void RemoveConnectionsByPerson_all(PersonModel person)
+        {
+            List<ConnectionModel> connections = ConnectionsFile.FullFilePath().LoadFile().ConvertToConnectionModel(GetPerson_All());
+            List<ConnectionModel> output = new List<ConnectionModel>();
+
+            if (connections.Count != 0)
+            {
+                foreach (ConnectionModel c in connections)
+                {
+                    if (c.FirstPerson.Id != person.Id && c.SecondPerson.Id != person.Id)
+                    {
+                        output.Add(c);
+                    }
+                }
+                output.SaveToConnectionFile(ConnectionsFile);
+            }
+      
+
         }
 
         public void RemoveTask(TaskModel task)
         {
             List<TaskModel> tasks = TaskListFile.FullFilePath().LoadFile().ConvertToTaskModels(PeopleFile);
 
-            TaskModel taskToRemove = tasks.Single(x => x.Id == task.Id);
-            tasks.Remove(taskToRemove);
-            tasks.SaveToTaskFile(TaskListFile);
-            
+            if (tasks.Count != 0)
+            {
+                TaskModel taskToRemove = tasks.Single(x => x.Id == task.Id);
+                tasks.Remove(taskToRemove);
+                tasks.SaveToTaskFile(TaskListFile);
+
+            }
+
         }
 
         public void SaveEditedPerson(PersonModel person)
@@ -321,6 +381,10 @@ namespace FPPG_CRM_v2
                     {
                         t.DateOfExecution = t.DateOfExecution.AddYears(1);
                     }
+                    else
+                    {
+                        t.Status = true;
+                    }
                     
                 }
 
@@ -328,6 +392,54 @@ namespace FPPG_CRM_v2
             }
         }
 
+        public string ConverRepetition(string repetition)
+        {
+            if (repetition == "Brak")
+            {
+                return "none";
+            }
+            else if (repetition == "Miesięczna")
+            {
+                return "monthly";
+            }
+            else if (repetition == "Kwartalna")
+            {
+                return "quarterly";
+            }
+            else if (repetition == "Roczna")
+            {
+                return "annual";
+            }
+            else
+            {
+                return "none";
+            }
 
+        }
+
+        public string ReverseConverRepetition(string repetition)
+        {
+            if (repetition == "none")
+            {
+                return "Brak";
+            }
+            else if (repetition == "monthly")
+            {
+                return "Miesięczna";
+            }
+            else if (repetition == "quarterly")
+            {
+                return "Kwartalna";
+            }
+            else if (repetition == "annual")
+            {
+                return "Roczna";
+
+            }
+            else
+            {
+                return "Brak";
+            }
+        }
     }
 }

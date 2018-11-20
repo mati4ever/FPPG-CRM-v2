@@ -36,7 +36,10 @@ namespace FPPG_CRM_v2
         void RemoveConnection(PersonModel firstPerson, PersonModel secondPerson);
 
         int GetPersonId();
+        List<string> GetTaskCategory();
 
+        string ConverRepetition(string repetition);
+        string ReverseConverRepetition(string repetition);
 
     }
 }

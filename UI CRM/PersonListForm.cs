@@ -54,12 +54,17 @@ namespace UI_CRM
 
         private void remove_button_Click(object sender, EventArgs e)
         {
-            DialogResult dl = MessageBox.Show("Czy napewno chcesz usunąć klienta?", "", MessageBoxButtons.YesNo);
-            if (dl == DialogResult.Yes)
+            if (Selected())
             {
-                PersonModel person = (PersonModel)person_listbox.SelectedItem;
-                GlobalConfig.Connection.RemovePerson(person);
+                DialogResult dl = MessageBox.Show("Czy napewno chcesz usunąć klienta?", "", MessageBoxButtons.YesNo);
+                if (dl == DialogResult.Yes)
+                {
+                    PersonModel person = (PersonModel)person_listbox.SelectedItem;
+                    GlobalConfig.Connection.RemovePerson(person);
+                    InitializeList();
+                }
             }
+
 
         }
 
@@ -70,14 +75,31 @@ namespace UI_CRM
 
         private void fullProfile_button_Click(object sender, EventArgs e)
         {
-            PersonModel person = (PersonModel)person_listbox.SelectedItem;
-            callingForm.LoadEditPersonForm(person);
+            if (Selected())
+            {
+                PersonModel person = (PersonModel)person_listbox.SelectedItem;
+                callingForm.LoadEditPersonForm(person);
+            }
+
         }
 
         private void customerTask_button_Click(object sender, EventArgs e)
         {
-            PersonModel person = (PersonModel)person_listbox.SelectedItem;
-            callingForm.LoadTaskByPersonForm(person);
+            if (Selected())
+            {
+                PersonModel person = (PersonModel)person_listbox.SelectedItem;
+                callingForm.LoadTaskByPersonForm(person);
+            }
+            
+        }
+
+        private bool Selected()
+        {
+            if (person_listbox.SelectedItem != null)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

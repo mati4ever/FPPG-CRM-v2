@@ -45,7 +45,7 @@
             this.task_listbox.ItemHeight = 23;
             this.task_listbox.Location = new System.Drawing.Point(16, 58);
             this.task_listbox.Name = "task_listbox";
-            this.task_listbox.Size = new System.Drawing.Size(751, 464);
+            this.task_listbox.Size = new System.Drawing.Size(751, 487);
             this.task_listbox.Sorted = true;
             this.task_listbox.TabIndex = 4;
             // 
@@ -80,13 +80,14 @@
             this.remove_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.remove_button.Image = ((System.Drawing.Image)(resources.GetObject("remove_button.Image")));
             this.remove_button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.remove_button.Location = new System.Drawing.Point(773, 458);
+            this.remove_button.Location = new System.Drawing.Point(773, 479);
             this.remove_button.Name = "remove_button";
             this.remove_button.Size = new System.Drawing.Size(182, 64);
             this.remove_button.TabIndex = 8;
             this.remove_button.Text = "Usuń";
             this.remove_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.remove_button.UseVisualStyleBackColor = true;
+            this.remove_button.Click += new System.EventHandler(this.remove_button_Click);
             // 
             // taskDetails_button
             // 
@@ -101,6 +102,7 @@
             this.taskDetails_button.Text = "Pokaż";
             this.taskDetails_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.taskDetails_button.UseVisualStyleBackColor = true;
+            this.taskDetails_button.Click += new System.EventHandler(this.taskDetails_button_Click);
             // 
             // taskDone_button
             // 
@@ -115,6 +117,7 @@
             this.taskDone_button.Text = "Wykonane";
             this.taskDone_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.taskDone_button.UseVisualStyleBackColor = true;
+            this.taskDone_button.Click += new System.EventHandler(this.taskDone_button_Click);
             // 
             // active_button
             // 
@@ -127,6 +130,7 @@
             this.active_button.TabIndex = 12;
             this.active_button.Text = "Tylko aktywne";
             this.active_button.UseVisualStyleBackColor = true;
+            this.active_button.Click += new System.EventHandler(this.active_button_Click);
             // 
             // TaskListForm
             // 

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditTaskForm));
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.executionDate_textbox = new System.Windows.Forms.TextBox();
+            this.note_textbox = new System.Windows.Forms.TextBox();
+            this.creationDate_textbox = new System.Windows.Forms.TextBox();
+            this.repetition_combobox = new System.Windows.Forms.ComboBox();
+            this.category_combobox = new System.Windows.Forms.ComboBox();
+            this.customer_combobox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -47,51 +47,67 @@
             this.saveCustomer_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox2
+            // executionDate_textbox
             // 
-            this.textBox2.Location = new System.Drawing.Point(241, 174);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(177, 26);
-            this.textBox2.TabIndex = 18;
+            this.executionDate_textbox.Enabled = false;
+            this.executionDate_textbox.Location = new System.Drawing.Point(241, 174);
+            this.executionDate_textbox.Name = "executionDate_textbox";
+            this.executionDate_textbox.Size = new System.Drawing.Size(177, 26);
+            this.executionDate_textbox.TabIndex = 18;
+            this.executionDate_textbox.Tag = "ED";
             // 
-            // textBox3
+            // note_textbox
             // 
-            this.textBox3.Location = new System.Drawing.Point(475, 103);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(441, 256);
-            this.textBox3.TabIndex = 19;
+            this.note_textbox.Enabled = false;
+            this.note_textbox.Location = new System.Drawing.Point(475, 103);
+            this.note_textbox.Multiline = true;
+            this.note_textbox.Name = "note_textbox";
+            this.note_textbox.Size = new System.Drawing.Size(441, 256);
+            this.note_textbox.TabIndex = 19;
+            this.note_textbox.Tag = "ED";
             // 
-            // textBox1
+            // creationDate_textbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(54, 174);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 26);
-            this.textBox1.TabIndex = 20;
+            this.creationDate_textbox.Enabled = false;
+            this.creationDate_textbox.Location = new System.Drawing.Point(54, 174);
+            this.creationDate_textbox.Name = "creationDate_textbox";
+            this.creationDate_textbox.Size = new System.Drawing.Size(177, 26);
+            this.creationDate_textbox.TabIndex = 20;
             // 
-            // comboBox3
+            // repetition_combobox
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(54, 331);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(364, 28);
-            this.comboBox3.TabIndex = 15;
+            this.repetition_combobox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.repetition_combobox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.repetition_combobox.Enabled = false;
+            this.repetition_combobox.FormattingEnabled = true;
+            this.repetition_combobox.Location = new System.Drawing.Point(54, 331);
+            this.repetition_combobox.Name = "repetition_combobox";
+            this.repetition_combobox.Size = new System.Drawing.Size(364, 28);
+            this.repetition_combobox.TabIndex = 15;
+            this.repetition_combobox.Tag = "ED";
             // 
-            // comboBox2
+            // category_combobox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(54, 251);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(364, 28);
-            this.comboBox2.TabIndex = 16;
+            this.category_combobox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.category_combobox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.category_combobox.Enabled = false;
+            this.category_combobox.FormattingEnabled = true;
+            this.category_combobox.Location = new System.Drawing.Point(54, 251);
+            this.category_combobox.Name = "category_combobox";
+            this.category_combobox.Size = new System.Drawing.Size(364, 28);
+            this.category_combobox.TabIndex = 16;
+            this.category_combobox.Tag = "ED";
             // 
-            // comboBox1
+            // customer_combobox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(54, 101);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(364, 28);
-            this.comboBox1.TabIndex = 17;
+            this.customer_combobox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.customer_combobox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.customer_combobox.Enabled = false;
+            this.customer_combobox.FormattingEnabled = true;
+            this.customer_combobox.Location = new System.Drawing.Point(54, 101);
+            this.customer_combobox.Name = "customer_combobox";
+            this.customer_combobox.Size = new System.Drawing.Size(364, 28);
+            this.customer_combobox.TabIndex = 17;
             // 
             // label4
             // 
@@ -159,9 +175,9 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 23);
+            this.label1.Size = new System.Drawing.Size(90, 23);
             this.label1.TabIndex = 14;
-            this.label1.Text = "Dodaj zadanie";
+            this.label1.Text = "Zadanie";
             // 
             // editCustomer_button
             // 
@@ -169,13 +185,14 @@
             this.editCustomer_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editCustomer_button.Image = ((System.Drawing.Image)(resources.GetObject("editCustomer_button.Image")));
             this.editCustomer_button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.editCustomer_button.Location = new System.Drawing.Point(204, 481);
+            this.editCustomer_button.Location = new System.Drawing.Point(200, 479);
             this.editCustomer_button.Name = "editCustomer_button";
             this.editCustomer_button.Size = new System.Drawing.Size(182, 64);
             this.editCustomer_button.TabIndex = 27;
             this.editCustomer_button.Text = "Edytuj";
             this.editCustomer_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.editCustomer_button.UseVisualStyleBackColor = true;
+            this.editCustomer_button.Click += new System.EventHandler(this.editCustomer_button_Click);
             // 
             // cancel_button
             // 
@@ -183,13 +200,14 @@
             this.cancel_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancel_button.Image = ((System.Drawing.Image)(resources.GetObject("cancel_button.Image")));
             this.cancel_button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.cancel_button.Location = new System.Drawing.Point(16, 481);
+            this.cancel_button.Location = new System.Drawing.Point(12, 481);
             this.cancel_button.Name = "cancel_button";
             this.cancel_button.Size = new System.Drawing.Size(182, 62);
             this.cancel_button.TabIndex = 26;
             this.cancel_button.Text = "Wyjdź";
             this.cancel_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.cancel_button.UseVisualStyleBackColor = true;
+            this.cancel_button.Click += new System.EventHandler(this.cancel_button_Click);
             // 
             // saveCustomer_button
             // 
@@ -202,9 +220,11 @@
             this.saveCustomer_button.Name = "saveCustomer_button";
             this.saveCustomer_button.Size = new System.Drawing.Size(182, 62);
             this.saveCustomer_button.TabIndex = 28;
+            this.saveCustomer_button.Tag = "ED";
             this.saveCustomer_button.Text = "Zapisz";
             this.saveCustomer_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.saveCustomer_button.UseVisualStyleBackColor = true;
+            this.saveCustomer_button.Click += new System.EventHandler(this.saveCustomer_button_Click);
             // 
             // EditTaskForm
             // 
@@ -215,12 +235,12 @@
             this.Controls.Add(this.editCustomer_button);
             this.Controls.Add(this.cancel_button);
             this.Controls.Add(this.saveCustomer_button);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.executionDate_textbox);
+            this.Controls.Add(this.note_textbox);
+            this.Controls.Add(this.creationDate_textbox);
+            this.Controls.Add(this.repetition_combobox);
+            this.Controls.Add(this.category_combobox);
+            this.Controls.Add(this.customer_combobox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label7);
@@ -241,12 +261,12 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox executionDate_textbox;
+        private System.Windows.Forms.TextBox note_textbox;
+        private System.Windows.Forms.TextBox creationDate_textbox;
+        private System.Windows.Forms.ComboBox repetition_combobox;
+        private System.Windows.Forms.ComboBox category_combobox;
+        private System.Windows.Forms.ComboBox customer_combobox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;

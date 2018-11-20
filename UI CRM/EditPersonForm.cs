@@ -156,32 +156,48 @@ namespace UI_CRM
 
         private void taskDetails_button_Click(object sender, EventArgs e)
         {
-            TaskModel task = (TaskModel)task_listbox.SelectedItem;
-            callingForm.LoadEditeTaskForm(task);
+            if (task_listbox.SelectedItem != null)
+            {
+                TaskModel task = (TaskModel)task_listbox.SelectedItem;
+                callingForm.LoadEditeTaskForm(task);
+            }
+
         }
 
         private void addConnection_button_Click(object sender, EventArgs e)
         {
-            PersonModel person = (PersonModel)connection_combobox.SelectedItem;
-            ConnectionModel connection = new ConnectionModel();
-            connection.FirstPerson = customer;
-            connection.SecondPerson = person;
+            if (connection_combobox.SelectedItem != null)
+            {
+                PersonModel person = (PersonModel)connection_combobox.SelectedItem;
+                ConnectionModel connection = new ConnectionModel();
+                connection.FirstPerson = customer;
+                connection.SecondPerson = person;
 
-            GlobalConfig.Connection.CreateConnection(connection);
-            InitializeLists();
+                GlobalConfig.Connection.CreateConnection(connection);
+                InitializeLists();
+            }
+
         }
 
         private void removeConnection_button_Click(object sender, EventArgs e)
         {
-            PersonModel person = (PersonModel)connection_listbox.SelectedItem;
-            GlobalConfig.Connection.RemoveConnection(customer, person);
-            InitializeLists();
+            if (connection_listbox.SelectedItem != null)
+            {
+                PersonModel person = (PersonModel)connection_listbox.SelectedItem;
+                GlobalConfig.Connection.RemoveConnection(customer, person);
+                InitializeLists();
+            }
+
         }
 
         private void showConnection_button_Click(object sender, EventArgs e)
         {
-            PersonModel person = (PersonModel)connection_listbox.SelectedItem;
-            callingForm.LoadEditPersonForm(person);
+            if (connection_listbox.SelectedItem != null)
+            {
+                PersonModel person = (PersonModel)connection_listbox.SelectedItem;
+                callingForm.LoadEditPersonForm(person);
+            }
+
         }
     }
 }

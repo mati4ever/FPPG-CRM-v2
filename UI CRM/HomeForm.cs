@@ -73,14 +73,17 @@ namespace UI_CRM
 
         private void removeTask_button_Click(object sender, EventArgs e)
         {
-
-            DialogResult dl = MessageBox.Show("Czy napewno chcesz usunać zadanie?", "", MessageBoxButtons.YesNo);
-
-            if (dl == DialogResult.Yes)
+            if (missedTask_listbox.SelectedItem != null)
             {
-                TaskModel task = (TaskModel)missedTask_listbox.SelectedItem;
-                GlobalConfig.Connection.RemoveTask(task);
+                DialogResult dl = MessageBox.Show("Czy napewno chcesz usunać zadanie?", "", MessageBoxButtons.YesNo);
+
+                if (dl == DialogResult.Yes)
+                {
+                    TaskModel task = (TaskModel)missedTask_listbox.SelectedItem;
+                    GlobalConfig.Connection.RemoveTask(task);
+                }
             }
+
             
         }
 

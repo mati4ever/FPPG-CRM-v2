@@ -78,5 +78,57 @@ namespace UI_CRM
                 InitializeTaskList();
             }
         }
+
+        private void taskDone_button_Click(object sender, EventArgs e)
+        {
+            if (Selected())
+            {
+                TaskModel task = (TaskModel)taskList_listbox.SelectedItem;
+                GlobalConfig.Connection.TaskDone(task);
+                InitializeTaskList();
+            }
+        }
+
+        private bool Selected()
+        {
+            if (taskList_listbox.SelectedItem != null)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private void taskDetails_button_Click(object sender, EventArgs e)
+        {
+            if (Selected())
+            {
+                TaskModel task = (TaskModel)taskList_listbox.SelectedItem;
+                callingForm.LoadEditeTaskForm(task);
+            }
+        }
+
+        private void remove_button_Click(object sender, EventArgs e)
+        {
+            if (Selected())
+            {
+                DialogResult dl = MessageBox.Show("Czy napewno chcesz usunąć zadanie?", "", MessageBoxButtons.YesNo);
+                if (dl == DialogResult.Yes)
+                {
+                    TaskModel task = (TaskModel)taskList_listbox.SelectedItem;
+                    GlobalConfig.Connection.RemoveTask(task);
+                    InitializeTaskList();
+                }
+            }
+        }
+
+        private void cancel_button_Click(object sender, EventArgs e)
+        {
+            callingForm.LoadPersonListPanel();
+        }
+
+        private void addTask_button_Click(object sender, EventArgs e)
+        {
+            callingForm.LoadAddTaskForm();
+        }
     }
 }

@@ -46,6 +46,8 @@ namespace UI_CRM
                     callingForm.LoadPersonListPanel();
                 }
             }
+            callingForm.LoadPersonListPanel();
+
         }
 
         private void addCustomer_button_Click(object sender, EventArgs e)

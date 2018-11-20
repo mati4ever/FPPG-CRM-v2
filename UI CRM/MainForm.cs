@@ -122,7 +122,7 @@ namespace UI_CRM
         {
             moving_panel.Location = new Point(244, 272);
             changing_panel.Controls.Clear();
-            TaskListForm tasks = new TaskListForm();
+            TaskListForm tasks = new TaskListForm(this);
             tasks.TopLevel = false;
             changing_panel.Controls.Add(tasks);
             tasks.Show();
@@ -156,6 +156,17 @@ namespace UI_CRM
             editTask.TopLevel = false;
             changing_panel.Controls.Add(editTask);
             editTask.Show();
+        }
+
+        public void LoadAddTaskForm()
+        {
+            changing_panel.Controls.Clear();
+            AddTaskForm task = new AddTaskForm(this);
+            task.TopLevel = false;
+            changing_panel.Controls.Add(task);
+            task.Show();
+
+            ControlButtonsDisable();
         }
     }
 }
