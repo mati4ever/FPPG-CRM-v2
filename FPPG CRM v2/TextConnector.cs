@@ -367,19 +367,23 @@ namespace FPPG_CRM_v2
                     if (t.Repetition == "none")
                     {
                         t.Status = true;
+                        t.DateOfCreation = DateTime.Now;
                     }
                     else if (t.Repetition == "monthly")
                     {
                         t.DateOfExecution = t.DateOfExecution.AddMonths(1);
+                        t.DateOfCreation = DateTime.Now;
                     }
                     else if (t.Repetition == "quarterly")
                     {
                         t.DateOfExecution = t.DateOfExecution.AddMonths(3);
+                        t.DateOfCreation = DateTime.Now;
 
                     }
                     else if (t.Repetition == "annual")
                     {
                         t.DateOfExecution = t.DateOfExecution.AddYears(1);
+                        t.DateOfCreation = DateTime.Now;
                     }
                     else
                     {

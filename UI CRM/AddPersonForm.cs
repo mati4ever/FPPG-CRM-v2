@@ -22,6 +22,7 @@ namespace UI_CRM
             InitializeComponent();
         }
 
+ 
 
 
         private bool Validate()

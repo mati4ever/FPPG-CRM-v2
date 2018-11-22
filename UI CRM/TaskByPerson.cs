@@ -22,10 +22,13 @@ namespace UI_CRM
         {
             InitializeComponent();
             callingForm = caller;
-            customer = person;
-            customer_combobox.Text = customer.RepresentByLastNameShort;
+           
             InitializeCombobox();
             InitializeTaskList();
+            customer = person;
+            customer_combobox.SelectedItem = customer;
+            customer_combobox.Text = customer.RepresentByLastNameShort;
+
         }
 
         private void InitializeCombobox()
@@ -33,6 +36,7 @@ namespace UI_CRM
             customer_combobox.DataSource = null;
             customer_combobox.DataSource = GlobalConfig.Connection.GetPerson_All();
             customer_combobox.DisplayMember = "RepresentByLastNameShort";
+            
                         
         }
 
@@ -128,7 +132,15 @@ namespace UI_CRM
 
         private void addTask_button_Click(object sender, EventArgs e)
         {
-            callingForm.LoadAddTaskForm();
+            if (customer_combobox.SelectedItem != null)
+            {
+                PersonModel person = (PersonModel)customer_combobox.SelectedItem;
+                callingForm.LoadAddTaskForm(person);
+            }
+            else
+            {
+                callingForm.LoadAddTaskForm();
+            }
         }
     }
 }

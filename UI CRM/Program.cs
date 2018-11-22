@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace UI_CRM
 {
@@ -18,7 +19,12 @@ namespace UI_CRM
             GlobalConfig.InitializeConnection();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+
+
             Application.Run(new MainForm());
         }
+
+
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FPPG_CRM_v2;
+using System.IO;
 
 namespace UI_CRM
 {
@@ -19,10 +20,21 @@ namespace UI_CRM
 
         private bool activebutton = true;
 
+        private string myDir = @"c:\data\FPPG CRM";
+
+
+        private void CreateDirectory()
+        {
+            DirectoryInfo di = Directory.CreateDirectory(myDir);
+        }
+        
+           
+
         public MainForm()
         {
             InitializeComponent();
             LoadHomePanel();
+            CreateDirectory();
         }
 
         protected override void WndProc(ref Message m)
@@ -160,6 +172,7 @@ namespace UI_CRM
 
         public void LoadAddTaskForm()
         {
+            
             changing_panel.Controls.Clear();
             AddTaskForm task = new AddTaskForm(this);
             task.TopLevel = false;
@@ -168,5 +181,18 @@ namespace UI_CRM
 
             ControlButtonsDisable();
         }
+
+        public void LoadAddTaskForm(PersonModel person)
+        {
+            changing_panel.Controls.Clear();
+            AddTaskForm task = new AddTaskForm(this, person);
+            task.TopLevel = false;
+            changing_panel.Controls.Add(task);
+            task.Show();
+            
+
+            ControlButtonsDisable();
+        }
+
     }
 }

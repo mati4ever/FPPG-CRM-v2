@@ -91,6 +91,7 @@
             this.taskList_listbox.Location = new System.Drawing.Point(41, 161);
             this.taskList_listbox.Name = "taskList_listbox";
             this.taskList_listbox.Size = new System.Drawing.Size(697, 382);
+            this.taskList_listbox.Sorted = true;
             this.taskList_listbox.TabIndex = 10;
             // 
             // taskDone_button

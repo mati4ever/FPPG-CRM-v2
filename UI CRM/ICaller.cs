@@ -17,6 +17,9 @@ namespace UI_CRM
         void LoadTaskListPanel();
         void LoadEditeTaskForm(TaskModel task);
         void LoadAddTaskForm();
+        void LoadAddTaskForm(PersonModel person);
+
+
 
         void ControlButtonsEnable();
         void ControlButtonsDisable();

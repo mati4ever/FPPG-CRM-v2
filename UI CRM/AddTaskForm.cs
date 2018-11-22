@@ -14,13 +14,29 @@ namespace UI_CRM
     public partial class AddTaskForm : Form
     {
         ICaller callingForm;
+        private PersonModel customer = new PersonModel();
+
 
         public AddTaskForm(ICaller caller)
         {
             callingForm = caller;
             InitializeComponent();
             InitializeList();
+
+            
         }
+        public AddTaskForm(ICaller caller, PersonModel person)
+        {
+            callingForm = caller;
+            InitializeComponent();
+            InitializeList();
+
+            customer_combobox.SelectedItem = person;
+            customer_combobox.Text = person.RepresentByLastNameShort;
+
+
+        }
+
 
         private void InitializeList()
         {
