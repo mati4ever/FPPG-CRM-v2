@@ -20,7 +20,7 @@ namespace UI_CRM
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-
+            GlobalConfig.CreateDirectory();
 
             Application.Run(new MainForm());
         }

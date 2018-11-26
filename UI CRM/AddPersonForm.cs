@@ -14,6 +14,7 @@ namespace UI_CRM
     public partial class AddPersonForm : Form
     {
         ICaller callingForm;
+        private bool rodo = false;
 
 
         public AddPersonForm(ICaller caller)
@@ -65,19 +66,68 @@ namespace UI_CRM
                 person.EmailAddress = emailAddress_textbox.Text;
                 person.PESEL = pesel_textbox.Text;
                 person.PersonalIdNumber = personalId_textbox.Text;
-                person.Note = note_textbox.Text;
 
-                GlobalConfig.Connection.CreatePerson(person);
+                string note = note_textbox.Text;
 
-                MessageBox.Show("Dodano nowego klienta.");
+                person.Note = GlobalConfig.Connection.ConvertNote(note);
 
-                callingForm.LoadPersonListPanel();
+                person.RODO = rodo;
+
+                if (rodo)
+                {
+                   
+                    DateTime date1;
+
+                    if (DateTime.TryParseExact(rodo_textbox.Text, "dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out date1))
+                    {
+                        person.RodoDate = date1;
+                        GlobalConfig.Connection.CreatePerson(person);
+
+                        MessageBox.Show("Dodano nowego klienta.");
+
+                        callingForm.LoadPersonListPanel();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Błędny format daty. Poprawny format: DD-MM-RRRR");
+                    }
+
+                }
+                else
+                {
+                    GlobalConfig.Connection.CreatePerson(person);
+
+                    MessageBox.Show("Dodano nowego klienta.");
+
+                    callingForm.LoadPersonListPanel();
+                }
+
+
+
+
 
             }
             else
             {
                 MessageBox.Show("Imię i nazwisko są wymaganymi polami.");
             }
+        }
+
+        private void rodo_checkbox_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (rodo)
+            {
+                rodo = false;
+                rodo_textbox.Enabled = false;
+            }
+            else
+            {
+                rodo = true;
+                rodo_textbox.Enabled = true;
+
+            }
+
         }
     }
 }

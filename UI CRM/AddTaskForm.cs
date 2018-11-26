@@ -90,7 +90,11 @@ namespace UI_CRM
                     task.DateOfCreation = date1;
                     task.DateOfExecution = date2;
                     task.Category = (string)category_combobox.SelectedItem;
-                    task.Note = note_textbox.Text;
+
+                    string note = note_textbox.Text;
+
+                    task.Note = GlobalConfig.Connection.ConvertNote(note);
+
                     task.Repetition = GlobalConfig.Connection.ConverRepetition(repetition_combobox.Text);
 
                     GlobalConfig.Connection.CreateTask(task);

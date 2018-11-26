@@ -445,5 +445,15 @@ namespace FPPG_CRM_v2
                 return "Brak";
             }
         }
+
+        public string ConvertNote(string note)
+        {
+            return note.Replace("\r\n", "|");
+        }
+
+        public string LoadNote(string note)
+        {
+            return note.Replace("|", "\r\n");
+        }
     }
 }

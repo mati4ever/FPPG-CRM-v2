@@ -26,6 +26,10 @@ namespace FPPG_CRM_v2
 
         public string Note { get; set; }
 
+        public bool RODO { get; set; }
+
+        public DateTime RodoDate { get; set; }
+
         public string RepresentByLastName
         {
             get

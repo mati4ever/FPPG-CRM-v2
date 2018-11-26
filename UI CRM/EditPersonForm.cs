@@ -16,6 +16,8 @@ namespace UI_CRM
         ICaller callingForm;
         private PersonModel customer = new PersonModel();
         private bool editing = false;
+        private bool rodo = false;
+
 
         public EditPersonForm(PersonModel person, ICaller caller)
         {
@@ -36,7 +38,17 @@ namespace UI_CRM
             emailAddress_textbox.Text = customer.EmailAddress;
             pesel_textbox.Text = customer.PESEL;
             personalId_textbox.Text = customer.PersonalIdNumber;
-            note_textbox.Text = customer.Note;
+            note_textbox.Text = GlobalConfig.Connection.LoadNote(customer.Note);
+
+            if (customer.RODO)
+            {
+                rodo = true;
+                rodo_checkbox.Checked = true;
+                rodo_textbox.Text = customer.RodoDate.ToString("dd-MM-yyyy");
+            }
+            
+
+
         }
 
         private void InitializeLists()
@@ -74,6 +86,11 @@ namespace UI_CRM
                     ctrl.Enabled = true;
                 }
 
+            }
+
+            if (!rodo)
+            {
+                rodo_textbox.Enabled = false;
             }
 
             editCustomer_button.Enabled = false;
@@ -129,15 +146,49 @@ namespace UI_CRM
                 person.EmailAddress = emailAddress_textbox.Text;
                 person.PESEL = pesel_textbox.Text;
                 person.PersonalIdNumber = personalId_textbox.Text;
-                person.Note = note_textbox.Text;
 
-                GlobalConfig.Connection.SaveEditedPerson(person);
+                string note = note_textbox.Text;
+                person.Note = GlobalConfig.Connection.ConvertNote(note);
 
-                MessageBox.Show("Zapisano zmiany.");
-                editing = false;
-                DisableControls();
+                person.RODO = rodo;
 
-                callingForm.ControlButtonsEnable();
+                if (rodo)
+                {
+
+                    DateTime date1;
+
+                    if (DateTime.TryParseExact(rodo_textbox.Text, "dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out date1))
+                    {
+                        person.RodoDate = date1;
+                        GlobalConfig.Connection.SaveEditedPerson(person);
+
+                        MessageBox.Show("Zapisano zmiany.");
+                        editing = false;
+                        DisableControls();
+
+                        callingForm.ControlButtonsEnable();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Błędny format daty. Poprawny format: DD-MM-RRRR");
+                    }
+
+                }
+                else
+                {
+                    GlobalConfig.Connection.SaveEditedPerson(person);
+
+                    MessageBox.Show("Zapisano zmiany.");
+                    editing = false;
+                    DisableControls();
+
+                    callingForm.ControlButtonsEnable();
+                }
+
+              
+
+
             }
             else
             {
@@ -196,6 +247,23 @@ namespace UI_CRM
             {
                 PersonModel person = (PersonModel)connection_listbox.SelectedItem;
                 callingForm.LoadEditPersonForm(person);
+            }
+
+        }
+
+        private void rodo_checkbox_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (rodo)
+            {
+                rodo = false;
+                rodo_textbox.Enabled = false;
+            }
+            else
+            {
+                rodo = true;
+                rodo_textbox.Enabled = true;
+
             }
 
         }

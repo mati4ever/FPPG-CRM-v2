@@ -41,6 +41,9 @@ namespace FPPG_CRM_v2
         string ConverRepetition(string repetition);
         string ReverseConverRepetition(string repetition);
 
+        string ConvertNote(string note);
+        string LoadNote(string note);
+
     }
 }
     

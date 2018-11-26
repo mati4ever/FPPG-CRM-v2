@@ -20,13 +20,6 @@ namespace UI_CRM
 
         private bool activebutton = true;
 
-        private string myDir = @"c:\data\FPPG CRM";
-
-
-        private void CreateDirectory()
-        {
-            DirectoryInfo di = Directory.CreateDirectory(myDir);
-        }
         
            
 
@@ -34,7 +27,7 @@ namespace UI_CRM
         {
             InitializeComponent();
             LoadHomePanel();
-            CreateDirectory();
+            
         }
 
         protected override void WndProc(ref Message m)
@@ -55,7 +48,7 @@ namespace UI_CRM
             moving_panel.Location = new Point(244, 130);
 
             changing_panel.Controls.Clear();
-            HomeForm home = new HomeForm();
+            HomeForm home = new HomeForm(this);
             home.TopLevel = false;
             changing_panel.Controls.Add(home);
             home.Show();

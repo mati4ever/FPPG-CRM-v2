@@ -13,8 +13,11 @@ namespace UI_CRM
 {
     public partial class HomeForm : Form
     {
-        public HomeForm()
+        private ICaller callingForm;
+
+        public HomeForm(ICaller caller)
         {
+            callingForm = caller;
             InitializeComponent();
             InitializeList();
         }
@@ -81,6 +84,7 @@ namespace UI_CRM
                 {
                     TaskModel task = (TaskModel)missedTask_listbox.SelectedItem;
                     GlobalConfig.Connection.RemoveTask(task);
+                    InitializeList();
                 }
             }
 
@@ -91,6 +95,33 @@ namespace UI_CRM
         {
             TaskModel task = (TaskModel)missedTask_listbox.SelectedItem;
             TaskDone(task);
+        }
+
+        private void showTodayTask_button_Click(object sender, EventArgs e)
+        {
+            if (todaysTask_listbox.SelectedItem != null)
+            {
+                TaskModel task = (TaskModel)todaysTask_listbox.SelectedItem;
+                callingForm.LoadEditeTaskForm(task);
+            }
+        }
+
+        private void showCloseTask_button_Click(object sender, EventArgs e)
+        {
+            if (closeTask_listbox.SelectedItem != null)
+            {
+                TaskModel task = (TaskModel)closeTask_listbox.SelectedItem;
+                callingForm.LoadEditeTaskForm(task);
+            }
+        }
+
+        private void showMissedTask_button_Click(object sender, EventArgs e)
+        {
+            if (missedTask_listbox.SelectedItem != null)
+            {
+                TaskModel task = (TaskModel)missedTask_listbox.SelectedItem;
+                callingForm.LoadEditeTaskForm(task);
+            }
         }
     }
 }

@@ -49,6 +49,8 @@
             this.addCustomer_button = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.personalId_textbox = new System.Windows.Forms.TextBox();
+            this.rodo_checkbox = new System.Windows.Forms.CheckBox();
+            this.rodo_textbox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -239,12 +241,34 @@
             this.personalId_textbox.Size = new System.Drawing.Size(210, 26);
             this.personalId_textbox.TabIndex = 6;
             // 
+            // rodo_checkbox
+            // 
+            this.rodo_checkbox.AutoSize = true;
+            this.rodo_checkbox.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rodo_checkbox.Location = new System.Drawing.Point(504, 8);
+            this.rodo_checkbox.Name = "rodo_checkbox";
+            this.rodo_checkbox.Size = new System.Drawing.Size(339, 23);
+            this.rodo_checkbox.TabIndex = 10;
+            this.rodo_checkbox.Text = "Zgoda na przetważanie danych osobowych";
+            this.rodo_checkbox.UseVisualStyleBackColor = true;
+            this.rodo_checkbox.CheckedChanged += new System.EventHandler(this.rodo_checkbox_CheckedChanged);
+            // 
+            // rodo_textbox
+            // 
+            this.rodo_textbox.Enabled = false;
+            this.rodo_textbox.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rodo_textbox.Location = new System.Drawing.Point(849, 8);
+            this.rodo_textbox.Name = "rodo_textbox";
+            this.rodo_textbox.Size = new System.Drawing.Size(106, 23);
+            this.rodo_textbox.TabIndex = 0;
+            // 
             // AddPersonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(967, 555);
+            this.Controls.Add(this.rodo_checkbox);
             this.Controls.Add(this.cancel_button);
             this.Controls.Add(this.addCustomer_button);
             this.Controls.Add(this.panel1);
@@ -255,6 +279,7 @@
             this.Controls.Add(this.personalId_textbox);
             this.Controls.Add(this.pesel_textbox);
             this.Controls.Add(this.lastName_textbox);
+            this.Controls.Add(this.rodo_textbox);
             this.Controls.Add(this.firstName_textbox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label6);
@@ -298,5 +323,7 @@
         private System.Windows.Forms.Button addCustomer_button;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox personalId_textbox;
+        private System.Windows.Forms.CheckBox rodo_checkbox;
+        private System.Windows.Forms.TextBox rodo_textbox;
     }
 }

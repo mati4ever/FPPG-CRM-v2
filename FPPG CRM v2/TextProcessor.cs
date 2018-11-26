@@ -12,7 +12,7 @@ namespace FPPG_CRM_v2
     {
         public static string FullFilePath(this string fileName)
         {
-            return $"{ ConfigurationManager.AppSettings["filePath"] }\\{ fileName } ";
+            return $"{ GlobalConfig.myDir }\\{ fileName } ";
         }
 
         public static List<string> LoadFile(this string file)
@@ -44,6 +44,8 @@ namespace FPPG_CRM_v2
                 p.PersonalIdNumber = cols[6];
                 p.PESEL = cols[7];
                 p.Note = cols[8];
+                p.RODO = bool.Parse(cols[9]);
+                p.RodoDate = DateTime.Parse(cols[10]);
 
                 output.Add(p);
 
@@ -129,7 +131,7 @@ namespace FPPG_CRM_v2
             List<string> lines = new List<string>();
             foreach (PersonModel p in models)
             {
-                lines.Add($"{ p.Id }#{ p.FirstName }#{ p.LastName }#{ p.Address }#{ p.PhoneNumber}#{ p.EmailAddress }#{ p.PersonalIdNumber }#{ p.PESEL }#{ p.Note }");
+                lines.Add($"{ p.Id }#{ p.FirstName }#{ p.LastName }#{ p.Address }#{ p.PhoneNumber}#{ p.EmailAddress }#{ p.PersonalIdNumber }#{ p.PESEL }#{ p.Note }#{p.RODO}#{p.RodoDate}");
             }
             File.WriteAllLines(fileName.FullFilePath(), lines);
         }

@@ -33,7 +33,7 @@ namespace UI_CRM
             executionDate_textbox.Text = task.DateOfExecution.ToString("dd-MM-yyyy");
             category_combobox.Text = task.Category;
             repetition_combobox.Text = GlobalConfig.Connection.ReverseConverRepetition(task.Repetition);
-            note_textbox.Text = task.Note;
+            note_textbox.Text = GlobalConfig.Connection.LoadNote(task.Note);
         }
 
         private void InitializeList()
@@ -118,7 +118,11 @@ namespace UI_CRM
                     editedTask.DateOfCreation = this.task.DateOfCreation;
                     editedTask.DateOfExecution = date1;
                     editedTask.Category = (string)category_combobox.SelectedItem;
-                    editedTask.Note = note_textbox.Text;
+
+                    string note = note_textbox.Text;
+
+                    editedTask.Note = GlobalConfig.Connection.ConvertNote(note);
+
                     editedTask.Repetition = task.Repetition = GlobalConfig.Connection.ConverRepetition(repetition_combobox.Text);
 
                     GlobalConfig.Connection.SaveEditedTask(editedTask);

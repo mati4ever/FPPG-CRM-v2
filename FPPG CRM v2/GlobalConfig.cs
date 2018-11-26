@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace FPPG_CRM_v2
 {
@@ -16,5 +17,12 @@ namespace FPPG_CRM_v2
         }
 
 
+        public static string myDir = $@"{ Directory.GetCurrentDirectory() }\DATA";
+
+
+        public static void CreateDirectory()
+        {
+            DirectoryInfo di = Directory.CreateDirectory(myDir);
+        }
     }
 }

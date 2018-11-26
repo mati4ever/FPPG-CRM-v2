@@ -59,6 +59,8 @@
             this.task_listbox = new System.Windows.Forms.ListBox();
             this.taskDetails_button = new System.Windows.Forms.Button();
             this.showConnection_button = new System.Windows.Forms.Button();
+            this.rodo_checkbox = new System.Windows.Forms.CheckBox();
+            this.rodo_textbox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // address_textbox
@@ -197,7 +199,6 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Enabled = false;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.Location = new System.Drawing.Point(241, 51);
             this.label3.Name = "label3";
@@ -218,7 +219,6 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Enabled = false;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
@@ -381,12 +381,38 @@
             this.showConnection_button.UseVisualStyleBackColor = true;
             this.showConnection_button.Click += new System.EventHandler(this.showConnection_button_Click);
             // 
+            // rodo_checkbox
+            // 
+            this.rodo_checkbox.AutoSize = true;
+            this.rodo_checkbox.Enabled = false;
+            this.rodo_checkbox.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rodo_checkbox.Location = new System.Drawing.Point(504, 9);
+            this.rodo_checkbox.Name = "rodo_checkbox";
+            this.rodo_checkbox.Size = new System.Drawing.Size(339, 23);
+            this.rodo_checkbox.TabIndex = 19;
+            this.rodo_checkbox.Tag = "ED";
+            this.rodo_checkbox.Text = "Zgoda na przetważanie danych osobowych";
+            this.rodo_checkbox.UseVisualStyleBackColor = true;
+            this.rodo_checkbox.CheckedChanged += new System.EventHandler(this.rodo_checkbox_CheckedChanged);
+            // 
+            // rodo_textbox
+            // 
+            this.rodo_textbox.Enabled = false;
+            this.rodo_textbox.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rodo_textbox.Location = new System.Drawing.Point(849, 9);
+            this.rodo_textbox.Name = "rodo_textbox";
+            this.rodo_textbox.Size = new System.Drawing.Size(106, 23);
+            this.rodo_textbox.TabIndex = 18;
+            this.rodo_textbox.Tag = "ED";
+            // 
             // EditPersonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(967, 555);
+            this.Controls.Add(this.rodo_checkbox);
+            this.Controls.Add(this.rodo_textbox);
             this.Controls.Add(this.showConnection_button);
             this.Controls.Add(this.taskDetails_button);
             this.Controls.Add(this.removeConnection_button);
@@ -459,5 +485,7 @@
         private System.Windows.Forms.ListBox task_listbox;
         private System.Windows.Forms.Button taskDetails_button;
         private System.Windows.Forms.Button showConnection_button;
+        private System.Windows.Forms.CheckBox rodo_checkbox;
+        private System.Windows.Forms.TextBox rodo_textbox;
     }
 }
