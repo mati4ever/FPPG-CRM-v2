@@ -131,7 +131,7 @@ namespace FPPG_CRM_v2
             List<string> lines = new List<string>();
             foreach (PersonModel p in models)
             {
-                lines.Add($"{ p.Id }#{ p.FirstName }#{ p.LastName }#{ p.Address }#{ p.PhoneNumber}#{ p.EmailAddress }#{ p.PersonalIdNumber }#{ p.PESEL }#{ p.Note }#{p.RODO}#{p.RodoDate}");
+                lines.Add($"{ p.Id }#{ p.FirstName }#{ p.LastName }#{ p.Address }#{ p.PhoneNumber}#{ p.EmailAddress }#{ p.PersonalIdNumber }#{ p.PESEL }#{ p.Note }#{ p.RODO }#{ p.RodoDate.ToString("yyyy-MM-dd HH:mm:ss") }");
             }
             File.WriteAllLines(fileName.FullFilePath(), lines);
         }
@@ -143,7 +143,7 @@ namespace FPPG_CRM_v2
 
             foreach (TaskModel t in tasks)
             {
-                lines.Add($"{ t.Id }#{ t.Category }#{ t.DateOfCreation }#{ t.DateOfExecution }#{ t.Note }#{ t.Status }#{ t.Repetition }#{ t.Person.Id }");
+                lines.Add($"{ t.Id }#{ t.Category }#{ t.DateOfCreation.ToString("yyyy-MM-dd HH:mm:ss") }#{ t.DateOfExecution.ToString("yyyy-MM-dd HH:mm:ss") }#{ t.Note }#{ t.Status }#{ t.Repetition }#{ t.Person.Id }");
             }
             File.WriteAllLines(fileName.FullFilePath(), lines);
         }

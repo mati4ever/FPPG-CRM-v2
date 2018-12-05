@@ -32,6 +32,7 @@
             this.logo_panel = new System.Windows.Forms.Panel();
             this.button_panel = new System.Windows.Forms.Panel();
             this.exit_button = new System.Windows.Forms.Button();
+            this.pdf_button = new System.Windows.Forms.Button();
             this.task_button = new System.Windows.Forms.Button();
             this.customer_button = new System.Windows.Forms.Button();
             this.home_button = new System.Windows.Forms.Button();
@@ -54,6 +55,7 @@
             // 
             this.button_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(51)))));
             this.button_panel.Controls.Add(this.exit_button);
+            this.button_panel.Controls.Add(this.pdf_button);
             this.button_panel.Controls.Add(this.task_button);
             this.button_panel.Controls.Add(this.customer_button);
             this.button_panel.Controls.Add(this.home_button);
@@ -77,6 +79,22 @@
             this.exit_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.exit_button.UseVisualStyleBackColor = true;
             this.exit_button.Click += new System.EventHandler(this.exit_button_Click);
+            // 
+            // pdf_button
+            // 
+            this.pdf_button.FlatAppearance.BorderSize = 0;
+            this.pdf_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pdf_button.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.pdf_button.Image = ((System.Drawing.Image)(resources.GetObject("pdf_button.Image")));
+            this.pdf_button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.pdf_button.Location = new System.Drawing.Point(0, 216);
+            this.pdf_button.Name = "pdf_button";
+            this.pdf_button.Size = new System.Drawing.Size(228, 65);
+            this.pdf_button.TabIndex = 3;
+            this.pdf_button.Text = "RAPORT";
+            this.pdf_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.pdf_button.UseVisualStyleBackColor = true;
+            this.pdf_button.Click += new System.EventHandler(this.pdf_button_Click);
             // 
             // task_button
             // 
@@ -173,5 +191,6 @@
         private System.Windows.Forms.Button customer_button;
         private System.Windows.Forms.Button home_button;
         private System.Windows.Forms.Panel moving_panel;
+        private System.Windows.Forms.Button pdf_button;
     }
 }

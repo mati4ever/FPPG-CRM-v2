@@ -127,7 +127,7 @@
             this.removeTask_button.FlatAppearance.BorderSize = 0;
             this.removeTask_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeTask_button.Image = ((System.Drawing.Image)(resources.GetObject("removeTask_button.Image")));
-            this.removeTask_button.Location = new System.Drawing.Point(824, 426);
+            this.removeTask_button.Location = new System.Drawing.Point(824, 422);
             this.removeTask_button.Name = "removeTask_button";
             this.removeTask_button.Size = new System.Drawing.Size(49, 49);
             this.removeTask_button.TabIndex = 7;
@@ -153,7 +153,7 @@
             this.closeTaskDone_button.FlatAppearance.BorderSize = 0;
             this.closeTaskDone_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeTaskDone_button.Image = ((System.Drawing.Image)(resources.GetObject("closeTaskDone_button.Image")));
-            this.closeTaskDone_button.Location = new System.Drawing.Point(769, 220);
+            this.closeTaskDone_button.Location = new System.Drawing.Point(769, 229);
             this.closeTaskDone_button.Name = "closeTaskDone_button";
             this.closeTaskDone_button.Size = new System.Drawing.Size(49, 49);
             this.closeTaskDone_button.TabIndex = 8;
@@ -166,7 +166,7 @@
             this.closeTaskDelay_button.FlatAppearance.BorderSize = 0;
             this.closeTaskDelay_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeTaskDelay_button.Image = ((System.Drawing.Image)(resources.GetObject("closeTaskDelay_button.Image")));
-            this.closeTaskDelay_button.Location = new System.Drawing.Point(824, 220);
+            this.closeTaskDelay_button.Location = new System.Drawing.Point(824, 229);
             this.closeTaskDelay_button.Name = "closeTaskDelay_button";
             this.closeTaskDelay_button.Size = new System.Drawing.Size(49, 49);
             this.closeTaskDelay_button.TabIndex = 6;
@@ -179,7 +179,7 @@
             this.missedTaskDone_button.FlatAppearance.BorderSize = 0;
             this.missedTaskDone_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.missedTaskDone_button.Image = ((System.Drawing.Image)(resources.GetObject("missedTaskDone_button.Image")));
-            this.missedTaskDone_button.Location = new System.Drawing.Point(769, 426);
+            this.missedTaskDone_button.Location = new System.Drawing.Point(769, 422);
             this.missedTaskDone_button.Name = "missedTaskDone_button";
             this.missedTaskDone_button.Size = new System.Drawing.Size(49, 49);
             this.missedTaskDone_button.TabIndex = 8;
@@ -205,7 +205,7 @@
             this.showCloseTask_button.FlatAppearance.BorderSize = 0;
             this.showCloseTask_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.showCloseTask_button.Image = ((System.Drawing.Image)(resources.GetObject("showCloseTask_button.Image")));
-            this.showCloseTask_button.Location = new System.Drawing.Point(879, 220);
+            this.showCloseTask_button.Location = new System.Drawing.Point(879, 229);
             this.showCloseTask_button.Name = "showCloseTask_button";
             this.showCloseTask_button.Size = new System.Drawing.Size(49, 49);
             this.showCloseTask_button.TabIndex = 13;
@@ -218,7 +218,7 @@
             this.showMissedTask_button.FlatAppearance.BorderSize = 0;
             this.showMissedTask_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.showMissedTask_button.Image = ((System.Drawing.Image)(resources.GetObject("showMissedTask_button.Image")));
-            this.showMissedTask_button.Location = new System.Drawing.Point(879, 426);
+            this.showMissedTask_button.Location = new System.Drawing.Point(879, 422);
             this.showMissedTask_button.Name = "showMissedTask_button";
             this.showMissedTask_button.Size = new System.Drawing.Size(49, 49);
             this.showMissedTask_button.TabIndex = 13;

@@ -187,5 +187,15 @@ namespace UI_CRM
             ControlButtonsDisable();
         }
 
+        private void pdf_button_Click(object sender, EventArgs e)
+        {
+            moving_panel.Location = new Point(244, 343);
+            changing_panel.Controls.Clear();
+            PdfReportForm report = new PdfReportForm();
+            report.TopLevel = false;
+            changing_panel.Controls.Add(report);
+            report.Show();
+
+        }
     }
 }

@@ -85,6 +85,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PdfReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PdfReportForm.Designer.cs">
+      <DependentUpon>PdfReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PersonListForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfReportForm.resx">
+      <DependentUpon>PdfReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonListForm.resx">
       <DependentUpon>PersonListForm.cs</DependentUpon>
